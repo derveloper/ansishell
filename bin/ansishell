@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-from ansible import inventory
+from ansible.inventory.manager import InventoryManager
 import subprocess
 import configparser
 import argparse
 from os.path import expanduser, isfile
 from ansible.parsing.dataloader import DataLoader
-from ansible.vars import VariableManager
+from ansible.vars.manager import VariableManager
 
 
 loader = DataLoader()
@@ -47,7 +47,7 @@ else:
 inventory_path = dotfile.get("inventory", env)
 shell_command = dotfile.get("config", "command")
 
-inventory_manager = inventory.Inventory(loader, variable_manager, inventory_path)
+inventory_manager = InventoryManager(loader, inventory_path)
 
 if args.e:
     print("Configured groups:")
