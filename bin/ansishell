@@ -9,7 +9,6 @@ from ansible.vars.manager import VariableManager
 
 
 loader = DataLoader()
-variable_manager = VariableManager()
 dotfile = configparser.ConfigParser()
 home = expanduser("~")
 dotfile_path = home + "/.ansishell"
@@ -56,7 +55,6 @@ if args.e:
     exit(0)
 
 if args.l:
-    inventory_manager = inventory.Inventory(loader, variable_manager, inventory_path)
     print("Groups in %s:" % inventory_path)
     for group_item in inventory_manager.list_groups():
         print(group_item)
