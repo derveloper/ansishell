@@ -4,7 +4,7 @@ A small tool to quickly ssh into an ansible host group
 
 ## Dependencies
 
-* Ansible 2.2
+* Ansible 2.4
 * Python 3
 * pyyaml
 * jinja2
